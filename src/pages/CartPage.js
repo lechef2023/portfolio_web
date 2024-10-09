@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartPage({ cartItems }) {
+function CartPage({ cartItems, removeFromCart }) {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
@@ -11,9 +11,10 @@ function CartPage({ cartItems }) {
       ) : (
         <div>
           <ul>
-            {cartItems.map((item, index) => (
-              <li key={index}>
+            {cartItems.map((item) => (
+              <li key={item.id}>
                 {item.name} - ${item.price}
+                <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
               </li>
             ))}
           </ul>
@@ -26,3 +27,5 @@ function CartPage({ cartItems }) {
 }
 
 export default CartPage;
+
+

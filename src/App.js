@@ -1,24 +1,30 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import CartPage from "./pages/CartPage";
+import styles from "./styles.css";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
+  // Función para agregar productos al carrito
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
   };
 
+  // Función para eliminar productos del carrito
+  const removeFromCart = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
+
   return (
-    <Router>
-      <Header cartItems={cartItems} />
-      <Routes>
-        <Route path="/" element={<Home addToCart={addToCart} />} />
-        <Route path="/cart" element={<CartPage cartItems={cartItems} />} />
-      </Routes>
-    </Router>
+    <div>
+      <h1>Tienda Online</h1>
+      {/* Componente de catálogo de productos */}
+      <Home addToCart={addToCart} />
+      
+      {/* Componente de carrito de compras */}
+      <CartPage cartItems={cartItems} removeFromCart={removeFromCart} />
+    </div>
   );
 }
 
