@@ -180,3 +180,52 @@ button:hover {
     width: 100%; /* Ocupa el 100% del ancho disponible en pantallas pequeñas */
   }
 }
+
+.cart-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif; /* Estilo de letra consistente */
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #555; /* Puedes cambiar el color si lo prefieres */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+h3 {
+  margin-top: 2rem;
+  font-size: 1.75rem;
+}
+

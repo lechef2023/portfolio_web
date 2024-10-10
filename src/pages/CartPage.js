@@ -4,7 +4,7 @@ function CartPage({ cartItems, removeFromCart }) {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div>
+    <div className="cart-page-container">
       <h2>Carrito de Compras</h2>
       {cartItems.length === 0 ? (
         <p>Tu carrito está vacío</p>
@@ -27,5 +27,3 @@ function CartPage({ cartItems, removeFromCart }) {
 }
 
 export default CartPage;
-
-
